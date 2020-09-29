@@ -1,0 +1,7 @@
+.logo-container {
+  display: flex;
+  justify-content: center;
+}
+.logo-container img {
+  height: 200px;
+}

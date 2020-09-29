@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
-import yelp from '../apis/yelp-fusion';
 import Search from './Search';
+import Header from './Header';
+import yelp from '../apis/yelp-fusion';
+import logo from '../assets/logo.png';
+import './App.css';
 
 const App = () => {
   // Our data used to send to Yelp Fusion when our Search child
@@ -26,7 +29,13 @@ const App = () => {
 
   return (
     <div>
-      <h1>Restaurant Tinder</h1>
+      <Header />
+      <div className="logo-container">
+        <img
+          src={logo}
+          alt="Restaurant Tinder Icon"
+        />
+      </div>
       <Search 
         text={"What are you craving?"}
         onSelectTerm={handleFoodSearch}
@@ -35,7 +44,12 @@ const App = () => {
         text={"What's your ideal location?"}
         onSelectTerm={handleLocationSearch}
       />
-      <button className="fluid ui button" onClick={onSearchSubmit}>Submit</button>
+      <button 
+        className="fluid ui button" 
+        onClick={onSearchSubmit}
+        style={{width: "300px", margin: "30px auto"}}>
+        Submit
+      </button>
       <p>{food}</p>
       <p>{location}</p>
     </div>
