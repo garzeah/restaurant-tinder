@@ -50,8 +50,6 @@ const App = () => {
         style={{width: "300px", margin: "30px auto"}}>
         Submit
       </button>
-      <p>{food}</p>
-      <p>{location}</p>
     </div>
   )
 }
