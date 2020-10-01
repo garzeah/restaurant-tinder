@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-import Search from './Search';
-import Header from './Header';
 import yelp from '../apis/yelp-fusion';
-import logo from '../assets/logo.png';
+import Header from './Header';
+import Home from './Home';
+import Game from './Game';
+import Route from './Route';
 import './App.css';
 
 const App = () => {
@@ -10,6 +11,9 @@ const App = () => {
   // component sends it back to its parent
   const [food, setFood] = useState();
   const [location, setLocation] = useState();
+
+  // Data pertaining to response from Yelp Fusion
+  const [yelpResults, setYelpResults] = useState();
 
   // We will be using these functions to send food and location data
   // from child to parent
@@ -24,32 +28,29 @@ const App = () => {
         location: location
       }
     });
-    console.log(response.data.businesses);
+    // Saving our results
+    setYelpResults(response.data.businesses);
   }
+
+//   <Home 
+//   handleFoodSearch={handleFoodSearch}
+//   handleLocationSearch={handleLocationSearch}
+//   onSearchSubmit={onSearchSubmit}
+// />
 
   return (
     <div>
       <Header />
-      <div className="logo-container">
-        <img
-          src={logo}
-          alt="Restaurant Tinder Icon"
+      <Route path="/">
+        <Home 
+          handleFoodSearch={handleFoodSearch}
+          handleLocationSearch={handleLocationSearch}
+          onSearchSubmit={onSearchSubmit}
         />
-      </div>
-      <Search 
-        text={"What are you craving?"}
-        onSelectTerm={handleFoodSearch}
-      />
-      <Search 
-        text={"What's your ideal location?"}
-        onSelectTerm={handleLocationSearch}
-      />
-      <button 
-        className="fluid ui button" 
-        onClick={onSearchSubmit}
-        style={{width: "300px", margin: "30px auto"}}>
-        Submit
-      </button>
+      </Route>
+      <Route path="/game">
+        <Game yelpResults={yelpResults}/>
+      </Route>      
     </div>
   )
 }
