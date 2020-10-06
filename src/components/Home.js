@@ -22,9 +22,8 @@ const Home = ({ handleFoodSearch, handleLocationSearch, onSearchSubmit }) => {
         onSelectTerm={handleLocationSearch}
       />
       <Link
-        href="/game"
-        className="fluid ui button" 
-        onClick={onSearchSubmit}
+        href="/loading"
+        className="fluid ui button"
         style={{width: "300px", margin: "30px auto"}}>
         Submit
       </Link>

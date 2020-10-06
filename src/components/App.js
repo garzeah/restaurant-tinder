@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import yelp from '../apis/yelp-fusion';
 import Header from './Header';
 import Home from './Home';
 import Game from './Game';
 import Route from './Route';
+import Loading from './Loading';
 import './App.css';
 
 const App = () => {
@@ -13,44 +13,28 @@ const App = () => {
   const [location, setLocation] = useState();
 
   // Data pertaining to response from Yelp Fusion
-  const [yelpResults, setYelpResults] = useState();
-
-  // We will be using these functions to send food and location data
-  // from child to parent
-  const handleFoodSearch = (term) => {setFood(term);};
-  const handleLocationSearch = (term) => {setLocation(term);};
-
-  // Function for accessing Yelp Fusion API
-  const onSearchSubmit = async () => {
-    const response = await yelp.get('/businesses/search', {
-      params: {
-        term: food,
-        location: location
-      }
-    });
-    // Saving our results
-    setYelpResults(response.data.businesses);
-  }
-
-//   <Home 
-//   handleFoodSearch={handleFoodSearch}
-//   handleLocationSearch={handleLocationSearch}
-//   onSearchSubmit={onSearchSubmit}
-// />
+  const [yelpResults, setYelpResults] = useState({ businesses: {} });
 
   return (
     <div>
       <Header />
       <Route path="/">
         <Home 
-          handleFoodSearch={handleFoodSearch}
-          handleLocationSearch={handleLocationSearch}
-          onSearchSubmit={onSearchSubmit}
+          handleFoodSearch={(term) => {setFood(term)}}
+          handleLocationSearch={(term) => {setLocation(term)}}
+        />
+      </Route>
+      <Route path="/loading">
+        <Loading 
+          food={food} 
+          location={location}
+          yelpResults={yelpResults}
+          setYelpResults={setYelpResults}
         />
       </Route>
       <Route path="/game">
-        <Game yelpResults={yelpResults}/>
-      </Route>      
+        <Game yelpResults={yelpResults} />
+      </Route>
     </div>
   )
 }
