@@ -1,12 +1,15 @@
 import React from 'react';
 import './Game.css';
-// import Card from './Card.js'
+import Card from './Card.js'
 
 const Game = ({ yelpResults }) => {
-  console.log(yelpResults);
+  // Figure out why it does this 3 times later
+  // console.log(yelpResults);
   return (
     <div className="game">
-      Open console for results
+      <Card 
+        yelpResults={yelpResults}
+      />
     </div>
   );
 };

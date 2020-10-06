@@ -28,12 +28,11 @@ const App = () => {
         <Loading 
           food={food} 
           location={location}
-          yelpResults={yelpResults}
           setYelpResults={setYelpResults}
         />
       </Route>
       <Route path="/game">
-        <Game yelpResults={yelpResults} />
+        <Game yelpResults={yelpResults.businesses[0]} />
       </Route>
     </div>
   )

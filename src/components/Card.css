@@ -1,11 +1,26 @@
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 2px solid black;
-  width: 500px;
+.header {
+  text-align: center;
 }
 
-.img_content {
-  width: 30vh;
+.card-img {
+  display: flex;
+  justify-content: center;
+}
+
+.card-img img {
+  max-width: 50%;
+}
+
+.card-content {
+  padding: 0 25%;
+}
+
+.ratings-and-reviews {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price-and-category {
+  display: flex;
+  justify-content: space-between;
 }
