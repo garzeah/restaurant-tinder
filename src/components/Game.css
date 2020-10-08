@@ -2,3 +2,15 @@
   display: flex;
   justify-content: center;
 }
+
+.reject {
+  font-size: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.approve {
+  font-size: 100px;
+  display: flex;
+  align-items: center;
+}

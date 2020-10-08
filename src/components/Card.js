@@ -2,8 +2,6 @@ import React from 'react';
 import './Card.css';
 
 const Card = ({ yelpResults }) => {
-  console.log(yelpResults);
-
   return (
     <div className="card-container">
       <h1 className="header">{yelpResults.name}</h1>
@@ -17,12 +15,17 @@ const Card = ({ yelpResults }) => {
             <p>{yelpResults.review_count} reviews</p>
           </div>
           <div className="price-and-category">
-            <p>{yelpResults.price}</p>
-            <p>Category will be stored here soon</p>
+            <p>{`Price: ${yelpResults.price}`}</p>
+            <p>{`${yelpResults.categories[0].title}`}</p>
           </div>
-          <div className="address-and-number">
-            <p>Location will be stored here soon</p>
-            <p>{yelpResults.display_phone}</p>
+          <div className="address">
+            <p>
+              {yelpResults.location.display_address[0]}<br />
+              {yelpResults.location.display_address[1]}
+            </p>
+          </div>
+          <div className="number">
+            <p>Restaurant Number: {yelpResults.display_phone}</p>
           </div>
         </div>
       </div>

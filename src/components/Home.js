@@ -1,8 +1,8 @@
 import React from 'react';
 import Search from './Search';
 import Link from './Link';
-import mobileLogo from '../assets/mobileLogo.png';
-import desktopLogo from '../assets/desktopLogo.png';
+import mobileLogo from '../assets/images/mobileLogo.png';
+import desktopLogo from '../assets/images/desktopLogo.png';
 
 const Home = ({ handleFoodSearch, handleLocationSearch, onSearchSubmit }) => {
   return (

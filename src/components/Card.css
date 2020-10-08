@@ -1,26 +1,79 @@
+@font-face {
+  font-family: "Gotham Rounded Bold";
+  src: local("Gotham Rounded Bold"), url('../assets/fonts/GothamRoundedBold_21016.ttf')
+}
+
+@font-face {
+  font-family: "Gotham Rounded Book";
+  src: local("Gotham Rounded Book"), url('../assets/fonts/GothamRoundedBook_21018.ttf')
+}
+
+@font-face {
+  font-family: "Gotham Rounded Medium";
+  src: local("Gotham Rounded Medium"), url('../assets/fonts/GothamRoundedMedium_21022.ttf')
+}
+
+.card-container {
+  margin: 15px 0;
+}
+
 .header {
   text-align: center;
+  font-family: 'Gotham Rounded Bold';
+  font-size: 21px;
+}
+
+.card-container-no-header {
+  background: #F65275;
+  margin: 0 100px;
+  padding: 10px 0;
+  border-radius: 25px;
 }
 
 .card-img {
   display: flex;
   justify-content: center;
+  margin: 10px 0;
 }
 
 .card-img img {
-  max-width: 50%;
+  max-height: 600px;
+  max-width: 80%;
+  border-radius: 10px;
 }
 
 .card-content {
-  padding: 0 25%;
+  padding: 0 8%;
 }
 
 .ratings-and-reviews {
   display: flex;
   justify-content: space-between;
+  font-family: 'Gotham Rounded Book';
+  font-size: 12px;
+  color: #e6e6e6;
+  margin-bottom: 5px;
 }
 
 .price-and-category {
   display: flex;
   justify-content: space-between;
+  font-family: 'Gotham Rounded Book';
+  font-size: 12px;
+  color: #e6e6e6;
+  margin-bottom: 5px;
+}
+
+.address {
+  font-family: 'Gotham Rounded Medium';
+  font-size: 12px;
+  color: #e6e6e6;
+  margin-bottom: 5px;
+}
+
+.number {
+  font-family: 'Gotham Rounded Book';
+  font-size: 12px;
+  color: #e6e6e6;
+  margin-bottom: 5px;
 }
