@@ -20,7 +20,7 @@
 .header {
   text-align: center;
   font-family: 'Gotham Rounded Bold';
-  font-size: 21px;
+  font-size: 40px;
 }
 
 .card-container-no-header {
@@ -59,21 +59,21 @@
   display: flex;
   justify-content: space-between;
   font-family: 'Gotham Rounded Book';
-  font-size: 12px;
+  font-size: 29px;
   color: #e6e6e6;
   margin-bottom: 5px;
 }
 
 .address {
   font-family: 'Gotham Rounded Medium';
-  font-size: 12px;
+  font-size: 18px;
   color: #e6e6e6;
   margin-bottom: 5px;
 }
 
 .number {
   font-family: 'Gotham Rounded Book';
-  font-size: 12px;
+  font-size: 18px;
   color: #e6e6e6;
   margin-bottom: 5px;
 }
