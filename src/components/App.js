@@ -33,8 +33,7 @@ const App = () => {
       </Route>
       <Route path="/game">
         <Game 
-          yelpResults={yelpResults}
-          setYelpResults={setYelpResults}
+          yelpResults={yelpResults.businesses}
         />
       </Route>
     </div>

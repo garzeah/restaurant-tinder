@@ -1,46 +1,45 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Card from './Card.js'
 import ApproveButton from './ApproveButton'
 import RejectButton from './RejectButton'
 import './Game.css';
 
-const Game = ({ yelpResults, setYelpResults }) => {
-  // Figure out why it does this 3 times later
+const Game = ({ yelpResults }) => {  
+  // Our state for managing the indexes of restaurants
+  const [restaurantIndexes, setRestaurantIndexes] = useState([]);
+
+  // We are only running this at initial render and anytime
+  // yelpResults gets updated (only once per food and location submit)
+  useEffect(() => {
+    // Concatenating the value of each index into our state
+      Object.keys(yelpResults).map((key) => {
+        return setRestaurantIndexes(restaurantIndexes => [...restaurantIndexes, key]);
+      });
+  }, [yelpResults]);
+
+  const handleRejectClick = () => {
+    console.log('Reject');
+  }
+
+  const handleApproveClick = () => {
+    console.log('Approve');
+  }
+
   console.log(yelpResults);
 
-  // Length of businesses
-  // console.log(Object.keys(yelpResults.businesses).length);
+  // Component rerenders everytime someone clicks approve or reject
+  useEffect(() => {
+    // if length of restaurantIndexes === 1 then this is where you'll dine at
 
-  // Removing an entry from our yelp results
-  // delete yelpResults.businesses[0];
-  // delete yelpResults.businesses[1];
-  // console.log(yelpResults);
-  // console.log(typeof(yelpResults.businesses[0]));
-
-  // Our game logic
-  // useEffect(() => {
-  // if length of remaining restaurants is equal to one, this is where you'll eat
-  
-  // else if user clicks plus, we keep the restaurant
-  //    - pass an onClick handler
-
-  // else if user clicks minus, we remove the restaurant from the list
-  //    - pass an onClick handler
-
-  // else if user clicks choose for me, we randomly choose from the list of
-  // remaining restaurants
-
-  // else
-  // you shouldn't get this output at all, if you do, debug
-  // });
+  }, [restaurantIndexes])
 
   return (
     <div className="game">
-      <RejectButton />
+      <RejectButton handleRejectClick={handleRejectClick} />
       <Card 
-        yelpResults={yelpResults.businesses[0]}
+        yelpResults={yelpResults[0]}
       />
-      <ApproveButton />
+      <ApproveButton handleApproveClick={handleApproveClick} />
     </div>
   );
 };

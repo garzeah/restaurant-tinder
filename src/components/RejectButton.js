@@ -1,9 +1,9 @@
 import React from 'react';
 import './Game.css';
 
-const RejectButton = () => {
+const RejectButton = ({ handleRejectClick }) => {
   return (
-    <div className="reject">
+    <div className="reject" onClick={handleRejectClick}>
       -
     </div>
   )

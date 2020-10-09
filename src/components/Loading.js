@@ -15,10 +15,9 @@ const Loading = ({ food, location, setYelpResults }) => {
           location: location
         }
       })
-      // Saving our results
-      setYelpResults({businesses: response.data.businesses});
-
-      // Turns off our loading screen
+      // Saving our results, getting first 5 restaurants,
+      // and turning off our loading screen
+      setYelpResults({businesses: response.data.businesses.splice(0, 5)});
       setEnableLoading(1);
     }
     catch (error) {
@@ -29,7 +28,8 @@ const Loading = ({ food, location, setYelpResults }) => {
   // Our Yelp Fusion Search function
   yelpFusionSearch();
 
-  // Our conditional for when to enable or disable loading screen
+  // Our conditionals for when to enable or disable loading screen
+  // Loading screen is waiting for Yelp to receive data
   if (enableLoading === 0) {
     return (
       <div className="loadingIncomplete">
@@ -37,6 +37,7 @@ const Loading = ({ food, location, setYelpResults }) => {
       <div className="loader"></div>
     </div>
     )
+  // Loading screen has received data from Yelp
   } else if (enableLoading === 1) {
       return (
         <div className="loadingComplete">
@@ -49,6 +50,7 @@ const Loading = ({ food, location, setYelpResults }) => {
           </Link>
         </div>
       )
+    // Loading failed
     } else {
       return (
         <div>

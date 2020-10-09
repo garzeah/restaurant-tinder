@@ -1,9 +1,9 @@
 import React from 'react';
 import './Game.css';
 
-const ApproveButton = () => {
+const ApproveButton = ({ handleApproveClick }) => {
   return (
-    <div className="approve">
+    <div className="approve" onClick={handleApproveClick}>
       +
     </div>
   );
