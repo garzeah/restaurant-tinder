@@ -1,4 +1,5 @@
 import React from 'react';
+// import Rating from './Ratings';
 import './Card.css';
 
 const Card = ({ yelpResults }) => {
@@ -11,6 +12,7 @@ const Card = ({ yelpResults }) => {
         </div>
         <div className="card-content">
           <div className="ratings-and-reviews">
+            {/* <Rating ratings={yelpResults.rating} /> */}
             <p>{yelpResults.rating}</p>
             <p>{yelpResults.review_count} reviews</p>
           </div>

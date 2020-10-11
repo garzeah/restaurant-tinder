@@ -21,6 +21,7 @@ const Loading = ({ food, location, setYelpResults }) => {
         setYelpResults({businesses: response.data.businesses.splice(0, 5)});
         setEnableLoading(1);
       }
+      // Our loading screen if Yelp Fusion does not give us a response
       catch (error) {
         setEnableLoading(2);
       }

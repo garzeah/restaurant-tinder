@@ -37,7 +37,7 @@
 }
 
 .card-img img {
-  max-height: 600px;
+  max-height: 400px;
   max-width: 80%;
   border-radius: 10px;
 }
@@ -50,7 +50,7 @@
   display: flex;
   justify-content: space-between;
   font-family: 'Gotham Rounded Book';
-  font-size: 12px;
+  font-size: 13px;
   color: #e6e6e6;
   margin-bottom: 5px;
 }
@@ -59,21 +59,22 @@
   display: flex;
   justify-content: space-between;
   font-family: 'Gotham Rounded Book';
-  font-size: 29px;
+  font-size: 13px;
   color: #e6e6e6;
   margin-bottom: 5px;
 }
 
 .address {
   font-family: 'Gotham Rounded Medium';
-  font-size: 18px;
+  font-size: 13px;
   color: #e6e6e6;
   margin-bottom: 5px;
 }
 
 .number {
   font-family: 'Gotham Rounded Book';
-  font-size: 18px;
+  font-size: 13px;
   color: #e6e6e6;
   margin-bottom: 5px;
 }
+

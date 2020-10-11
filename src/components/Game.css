@@ -1,6 +1,14 @@
 .game {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+/* Reject Button Styling */
+.reject:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  transition-duration: .2s; 
 }
 
 .reject {
@@ -9,8 +17,23 @@
   align-items: center;
 }
 
+.reject img {
+  max-width: 100px;
+}
+
+/* Approve Button Styling */
+.approve:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  transition-duration: .2s; 
+}
+
 .approve {
   font-size: 100px;
   display: flex;
   align-items: center;
+}
+
+.approve img {
+  max-width: 100px;
 }
