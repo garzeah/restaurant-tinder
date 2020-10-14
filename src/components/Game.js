@@ -5,70 +5,65 @@ import RejectButton from './RejectButton'
 import './Game.css';
 
 const Game = ({ yelpResults }) => {  
-  // Our array for managing our list of restaurant indexes
+  // Our state for managing our list of restaurant indexes
   const [restaurantIndexes, setRestaurantIndexes] = useState([]);
 
-  // Our states for showing our Approve or Reject conditions
-  const [showApprove, setShowApprove] = useState(false);
-  const [showReject, setShowReject] = useState(false);
+  // This is the restaurant we want to show
+  const [currentRestaurantIndex, setCurrentRestaurantIndex] = useState(0);
 
   // We are only running this at initial render and anytime
   // yelpResults gets updated (only once per food and location submit)
   useEffect(() => {
     setRestaurantIndexes(Object.keys(yelpResults))
-  }, [yelpResults, showApprove, showReject]);
+  }, [yelpResults]);
 
-  // Function pertaining to clicking reject button
+  // Rerenders our component whenever these values change
+  useEffect(() => {}, [currentRestaurantIndex, restaurantIndexes])
+
+  // Our function to get a random restaurant
+  const randomRestaurant = () => {
+    let randomIndex = restaurantIndexes[Math.floor(Math.random() * restaurantIndexes.length)];
+
+    // Prevents us from getting the same restaurant in a row
+    while (randomIndex === currentRestaurantIndex) {
+      randomIndex = restaurantIndexes[Math.floor(Math.random() * restaurantIndexes.length)];
+    }
+
+    return randomIndex;
+  }
+
+  // Function pertaining to clicking the reject button
   const handleRejectClick = () => {
     console.log('Reject');
     
-    // Turning Reject Route on and Approve route off
-    setShowReject(true);
-    setShowApprove(false);
-  }
-
-  // Function pertaining to clicking approve button
-  const handleApproveClick = () => {
-    console.log('Approve');
-    
     // Turning Approve Route on and Reject route off 
-    setShowApprove(true);
-    setShowReject(false);
-  }
+    // return restaurantCard;
+  }  
+
+  // Function pertaining to clicking the approve button
+  const handleApproveClick = () => {
+    // Setting a new restaurant to display
+    setCurrentRestaurantIndex(randomRestaurant());
+    console.log(currentRestaurantIndex);
+  }  
+
+  // Our JSX that shows our restaurant
+  let restaurantCard = (
+    <div className="game">
+      <RejectButton handleRejectClick={handleRejectClick} />
+      {/* Chooses a random restaurant to view in our remaining restaurants */}
+      <Card 
+        yelpResults={yelpResults[currentRestaurantIndex]}
+        // yelpResults={yelpResults[restaurantIndexes[Math.floor(Math.random() * restaurantIndexes.length)]]}
+      />
+      <ApproveButton handleApproveClick={handleApproveClick} />
+    </div>
+  )
 
   // Show Approve Route
-  if (showApprove === true) {
-    console.log('Approve Render')
-    console.log(`Restaurant Indexes: ${restaurantIndexes}`);
-    console.log(`Random Restaurant Index: ${restaurantIndexes[Math.floor(Math.random() * restaurantIndexes.length)]}`);
-    return (
-      <div className="game">
-        <RejectButton handleRejectClick={handleRejectClick} />
-        {/* Chooses a random restaurant to view in our remaining restaurants */}
-        <Card 
-          yelpResults={yelpResults[restaurantIndexes[Math.floor(Math.random() * restaurantIndexes.length)]]}
-        />
-        <ApproveButton handleApproveClick={handleApproveClick} />
-      </div>      
-    )
-    // Show Reject Route
-  } else if (showReject === true) {
-      console.log('Reject Render')
-      console.log(`Restaurant Indexes: ${restaurantIndexes}`);
-      return (
-        <div className="game">
-          <RejectButton handleRejectClick={handleRejectClick} />
-          {/* Chooses a random restaurant to view in our remaining restaurants */}
-          <Card 
-            yelpResults={yelpResults[restaurantIndexes[Math.floor(Math.random() * restaurantIndexes.length)]]}
-          />
-          <ApproveButton handleApproveClick={handleApproveClick} />
-        </div>      
-      )
-  // If yelpResults does not have data for some reason this is our error handling content
-  } else if (Object.keys(yelpResults).length === 0) {
-    console.log('Error Handling')
-    console.log(`Restaurant Indexes: ${restaurantIndexes}`);
+  if (Object.keys(yelpResults).length === 0) {
+    // console.log('Error Handling')
+    // console.log(`Restaurant Indexes: ${restaurantIndexes}`);
     return (
       <div>
         Website was refreshed, you have to click "Home" and restart.
@@ -76,19 +71,9 @@ const Game = ({ yelpResults }) => {
     )
     // Our initial render, meaning no buttons were clicked and no error
   } else {
-      console.log('Initial Render')
-      console.log(`Restaurant Indexes: ${restaurantIndexes}`);
-      return (
-        <div className="game">
-          <RejectButton handleRejectClick={handleRejectClick} />
-          {/* Chooses a random restaurant to view in our remaining restaurants */}
-          <Card 
-            yelpResults={yelpResults[1]}
-            // yelpResults={yelpResults[restaurantIndexes[Math.floor(Math.random() * restaurantIndexes.length)]]}
-          />
-          <ApproveButton handleApproveClick={handleApproveClick} />
-        </div>
-      )
+      // console.log('Initial Render')
+      // console.log(`Restaurant Indexes: ${restaurantIndexes}`);
+      return restaurantCard; 
   }
 };
 
