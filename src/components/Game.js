@@ -9,7 +9,7 @@ const Game = ({ yelpResults }) => {
   const [restaurantList, setRestaurantList] = useState([]);
 
   // This is the current restaurant we are displaying
-  const [currentRestaurant, setCurrentRestaurant] = useState(4);
+  const [currentRestaurant, setCurrentRestaurant] = useState(yelpResults.length - 1);
 
   // We are only running this at initial render and anytime
   // yelpResults gets updated (only once per food and location submit)
@@ -28,7 +28,6 @@ const Game = ({ yelpResults }) => {
     while (randomIndex === currentRestaurant) {
       randomIndex = restaurantList[Math.floor(Math.random() * restaurantList.length)];
     }
-    console.log(`randomRest Index: ${randomIndex}`)
     return randomIndex;
   }
 
@@ -36,22 +35,12 @@ const Game = ({ yelpResults }) => {
   const handleRejectClick = () => {
     // Removing the current restaurant index from our array
     let updatedRestaurantList = restaurantList;
-    console.log(`Before Splice Updated Restaurant List: ${updatedRestaurantList}`)
     updatedRestaurantList.splice(restaurantList.indexOf(currentRestaurant), 1);
-
-    // console.log(`Old Current Restaurant: ${currentRestaurant}`)
-    console.log(`Updated Restaurant List: ${updatedRestaurantList}`)
     setRestaurantList(updatedRestaurantList);
-    // console.log(`Restaurant List: ${restaurantList}`)
 
     // Display a new restaurant
-    // console.log(`current rest before set ${currentRestaurant}`);
-    // console.log(`Random Number in updated rest list ${updatedRestaurantList[Math.floor(Math.random() * updatedRestaurantList.length)]}`)
     let newCurrentRestaurant = updatedRestaurantList[Math.floor(Math.random() * updatedRestaurantList.length)];
-    console.log(`Current Rest in Reject Fn: ${newCurrentRestaurant}`)
     setCurrentRestaurant(newCurrentRestaurant);
-    // console.log(`current rest after set ${currentRestaurant}`);
-    // console.log(`New Current Restaurant: ${currentRestaurant}`)
   }  
 
   // Function pertaining to clicking the approve button
@@ -64,41 +53,29 @@ const Game = ({ yelpResults }) => {
   let restaurantCard = (
     <div className="game">
       <RejectButton handleRejectClick={handleRejectClick} />
-      {/* Chooses a random restaurant to view in our remaining restaurants */}
-      <Card 
-        yelpResults={yelpResults[currentRestaurant]}
-        // yelpResults={yelpResults[restaurantList[Math.floor(Math.random() * restaurantList.length)]]}
-      />
+      <Card yelpResults={yelpResults[currentRestaurant]} />
       <ApproveButton handleApproveClick={handleApproveClick} />
     </div>
   )
 
-  // Show Approve Route
+  // Error Handling
   if (Object.keys(yelpResults).length === 0) {
-    // console.log('Error Handling')
-    // console.log(`Restaurant Indexes: ${restaurantList}`);
     return (
       <div>
         Website was refreshed, you have to click "Home" and restart.
       </div>
     )
-    // Our initial render, meaning no buttons were clicked and no error
+    // Victory Page
   } else if (restaurantList.length === 1) {
     return (
       <div>
         <p>You'll be eating here :D!</p>
-        <Card 
-          yelpResults={yelpResults[currentRestaurant]}
-          // yelpResults={yelpResults[restaurantList[Math.floor(Math.random() * restaurantList.length)]]}
-        />        
+        <Card yelpResults={yelpResults[currentRestaurant]} />        
       </div>
     )
+    // Initial render
   } else {
-      // console.log('Initial Render')
-      // console.log(`Restaurant Indexes: ${restaurantList}`);
-      // console.log(`Restaurant Indexes Length: ${restaurantList.length}`);
-      // console.log(yelpResults);
-      console.log(`Current Restaurant Index: ${currentRestaurant}`)
+      console.log(yelpResults);
       return restaurantCard; 
   }
 };

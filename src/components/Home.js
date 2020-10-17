@@ -1,10 +1,11 @@
 import React from 'react';
 import Search from './Search';
 import Link from './Link';
+import './Home.css'
 import mobileLogo from '../assets/images/mobileLogo.png';
 import desktopLogo from '../assets/images/desktopLogo.png';
 
-const Home = ({ handleFoodSearch, handleLocationSearch, onSearchSubmit }) => {
+const Home = ({ handleFoodSearch, handleLocationSearch }) => {
   return (
     <div>
       <div className="logo-container">
@@ -18,13 +19,13 @@ const Home = ({ handleFoodSearch, handleLocationSearch, onSearchSubmit }) => {
           onSelectTerm={handleFoodSearch}
         />
       <Search 
-        text={"What's your ideal location?"}
+        text={"Enter City and State"}
         onSelectTerm={handleLocationSearch}
       />
       <Link
         href="/loading"
-        className="fluid ui button"
-        style={{width: "300px", margin: "30px auto"}}>
+        className="fluid ui button submit-button"
+        >
         Submit
       </Link>
     </div>

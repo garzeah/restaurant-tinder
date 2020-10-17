@@ -12,9 +12,10 @@ const Card = ({ yelpResults }) => {
         </div>
         <div className="card-content">
           <div className="ratings-and-reviews">
-            {/* <Rating ratings={yelpResults.rating} /> */}
-            <p>{yelpResults.rating}</p>
-            <p>{yelpResults.review_count} reviews</p>
+            <p>{`${yelpResults.rating} Star Rating`}</p>
+            <a href={yelpResults.url} target="_blank" rel="noopener noreferrer">
+              {`${yelpResults.review_count} reviews`}
+            </a>
           </div>
           <div className="price-and-category">
             <p>{`Price: ${yelpResults.price}`}</p>
@@ -23,7 +24,7 @@ const Card = ({ yelpResults }) => {
           <div className="address">
             <p>
               {yelpResults.location.display_address[0]}<br />
-              {yelpResults.location.display_address[1]}
+              {`${yelpResults.location.city}, ${yelpResults.location.state} ${yelpResults.location.zip_code}`}
             </p>
           </div>
           <div className="number">

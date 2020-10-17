@@ -8,11 +8,12 @@ const Search = ({ text, onSelectTerm }) => {
     <div className="ui form" style={{margin: "15px"}}>
       <div className="field">
         <div className="search-container">
-          <label style={{fontWeight: "bold"}}>{text}</label>
           <input 
-            style={{background: "#F65275", width: "350px"}}
             type="text"
+            placeholder={text}
             onChange={(event) => {onSelectTerm(event.target.value)}}
+            onFocus={(event) => event.target.placeholder = ""}
+            onBlur={(event) => event.target.placeholder = text}
           />
         </div>
       </div>
