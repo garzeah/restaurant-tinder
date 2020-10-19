@@ -84,7 +84,9 @@ const Game = ({ yelpResults }) => {
     return (
       <div>
         <p>You'll be eating here :D!</p>
-        <Card yelpResults={yelpResults[currentRestaurant]} />        
+        <div className={isMobile ? "game-mobile" : "game"}>
+          <Card yelpResults={yelpResults[currentRestaurant]} />   
+        </div>     
       </div>
     )
     // Initial render

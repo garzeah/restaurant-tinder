@@ -78,3 +78,24 @@
   margin-bottom: 5px;
 }
 
+/* Mobile */
+@media (max-width: 767.98px) {
+  .card-img img {
+    max-height: 50%;
+    max-width: 80%;
+    border-radius: 10px;
+  }
+
+  .card-container-no-header {
+    background: #F27272;
+    margin: 0 10px;
+    padding: 10px 0;
+    border-radius: 25px;    
+  }
+
+  .header {
+    text-align: center;
+    font-family: 'Gotham Rounded Bold';
+    font-size: 20px;
+  }
+}
