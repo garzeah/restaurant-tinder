@@ -20,3 +20,20 @@
 .reject img, .approve img {
   max-width: 100px;
 }
+
+/* Mobile */
+@media (max-width: 767.98px) {
+  .game-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .game-buttons-mobile {
+    display: flex;
+  }
+
+  .game-buttons-mobile div {
+    margin: 0 10px;
+  }
+}

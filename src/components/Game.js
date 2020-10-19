@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import { useMediaQuery } from 'react-responsive';
 import Card from './Card.js'
 import ApproveButton from './ApproveButton'
 import RejectButton from './RejectButton'
@@ -49,15 +50,28 @@ const Game = ({ yelpResults }) => {
     setCurrentRestaurant(randomRestaurant());
   }
 
+  const isMobile = useMediaQuery({ query: '(max-device-width: 767.98px)' });
+  let restaurantCard = null;
   // Our JSX that shows our restaurant
-  let restaurantCard = (
-    <div className="game">
-      <RejectButton handleRejectClick={handleRejectClick} />
-      <Card yelpResults={yelpResults[currentRestaurant]} />
-      <ApproveButton handleApproveClick={handleApproveClick} />
-    </div>
-  )
-
+  if (isMobile) {
+    restaurantCard = (
+      <div className="game-mobile">
+        <Card yelpResults={yelpResults[currentRestaurant]} />
+        <div className="game-buttons-mobile">
+          <RejectButton handleRejectClick={handleRejectClick} />
+          <ApproveButton handleApproveClick={handleApproveClick} />
+        </div>
+      </div>      
+    )
+  } else {
+    restaurantCard = (
+      <div className="game">
+        <RejectButton handleRejectClick={handleRejectClick} />
+        <Card yelpResults={yelpResults[currentRestaurant]} />
+        <ApproveButton handleApproveClick={handleApproveClick} />
+      </div>
+    )
+  }
   // Error Handling
   if (Object.keys(yelpResults).length === 0) {
     return (

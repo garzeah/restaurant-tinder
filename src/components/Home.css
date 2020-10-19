@@ -7,7 +7,6 @@
 
 .submit-button {
   width: 150px !important;
-  margin: 30px auto !important;
   border-radius: 100px !important;
   background: #b3b3b3 !important;
   color: white !important;
@@ -18,10 +17,3 @@
   transform: scale(1.1);
   transition-duration: .1s; 
 }
-
-/* Mobile */
-/* @media (max-width: 767.98px) {
-  .logo-container {
-    width: 50%;
-  }
-} */
