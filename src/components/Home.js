@@ -1,4 +1,5 @@
 import React from 'react';
+import { useMediaQuery } from 'react-responsive';
 import Search from './Search';
 import Link from './Link';
 import './Home.css'
@@ -6,14 +7,31 @@ import mobileLogo from '../assets/images/mobileLogo.png';
 import desktopLogo from '../assets/images/desktopLogo.png';
 
 const Home = ({ handleFoodSearch, handleLocationSearch }) => {
-  return (
-    <div>
+  const isMobile = useMediaQuery({ query: '(max-device-width: 767.98px)' });
+  let logo = null;
+
+  if (isMobile) {
+    logo = 
       <div className="logo-container">
-          <img
-            src={window.screen.width < 768 ? mobileLogo : desktopLogo}
-            alt="Restaurant Tinder Icon"
-          />
-      </div>
+        <img
+          style={{maxWidth: "90%"}}
+          src={mobileLogo}
+          alt="Restaurant Tinder Icon"
+        />
+      </div>     
+  } else {
+    logo = 
+      <div className="logo-container">
+        <img
+          src={desktopLogo}
+          alt="Restaurant Tinder Icon"
+        />
+      </div>       
+  }
+
+  return (
+    <div className="home-container">
+      {logo}
       <Search 
           text={"What are you craving?"}
           onSelectTerm={handleFoodSearch}

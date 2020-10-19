@@ -1,3 +1,10 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .submit-button {
   width: 150px !important;
   margin: 30px auto !important;
@@ -11,3 +18,10 @@
   transform: scale(1.1);
   transition-duration: .1s; 
 }
+
+/* Mobile */
+/* @media (max-width: 767.98px) {
+  .logo-container {
+    width: 50%;
+  }
+} */

@@ -8,7 +8,7 @@ const Search = ({ text, onSelectTerm }) => {
     <div className="ui form" style={{margin: "15px"}}>
       <div className="field">
         <div className="search-container">
-          <input 
+          <input
             type="text"
             placeholder={text}
             onChange={(event) => {onSelectTerm(event.target.value)}}
