@@ -5,7 +5,7 @@ import './Search.css';
 // onSelectTerm passes data from child to parent
 const Search = ({ text, onSelectTerm }) => {
   return (
-    <div className="ui form" style={{margin: "15px"}}>
+    <div className="ui form">
       <div className="field">
         <div className="search-container">
           <input
