@@ -18,7 +18,7 @@ const Loading = ({ food, location, setYelpResults }) => {
         })
         // Saving our results, getting first 5 restaurants,
         // and turning off our loading screen
-        setYelpResults({businesses: response.data.businesses.splice(0, 5)});
+        setYelpResults({businesses: response.data.businesses.splice(0, 7)});
         setEnableLoading(1);
       }
       // Our loading screen if Yelp Fusion does not give us a response
@@ -43,6 +43,14 @@ const Loading = ({ food, location, setYelpResults }) => {
       return (
         <div className="loadingComplete">
           <p>Search complete!</p>
+          <div>
+            <p>Rules</p>
+            <ol>
+              <li>1) 7 Restaurants are randomly chosen.</li>
+              <li>2) Pressing + keeps restaurant in the queue.</li>
+              <li>3) Clicking - removes a restaurant from the queue until you decide on one.</li>
+            </ol>
+          </div>
           <Link
             href="/game"
             className="fluid ui button"

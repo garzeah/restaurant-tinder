@@ -3,6 +3,11 @@
   src: local("Gotham Rounded Medium"), url('../assets/fonts/GothamRoundedMedium_21022.ttf')
 }
 
+.rules p {
+  text-decoration: underline;
+  margin: 5px 0;
+}
+
 .loadingIncomplete {
   font-family: "Gotham Rounded Medium";
   display: flex;
