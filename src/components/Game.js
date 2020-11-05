@@ -75,7 +75,7 @@ const Game = ({ yelpResults }) => {
   // Error Handling
   if (Object.keys(yelpResults).length === 0) {
     return (
-      <div>
+      <div className="gameFailed">
         Website was refreshed, you have to click "Home" and restart.
       </div>
     )
@@ -83,7 +83,9 @@ const Game = ({ yelpResults }) => {
   } else if (restaurantList.length === 1) {
     return (
       <div>
-        <p>You'll be eating here :D!</p>
+        <div className="victoryText">
+          <p>Curated for you!</p>
+        </div>
         <div className={isMobile ? "game-mobile" : "game"}>
           <Card yelpResults={yelpResults[currentRestaurant]} />   
         </div>     
@@ -91,7 +93,6 @@ const Game = ({ yelpResults }) => {
     )
     // Initial render
   } else {
-      console.log(yelpResults);
       return restaurantCard; 
   }
 };
