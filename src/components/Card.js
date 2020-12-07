@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 // import Rating from './Ratings';
-import "./Card.css";
+import './Card.css';
 
 const Card = ({ yelpResults }) => {
   return (
@@ -23,8 +23,7 @@ const Card = ({ yelpResults }) => {
           </div>
           <div className="address">
             <p>
-              {yelpResults.location.display_address[0]}
-              <br />
+              {yelpResults.location.display_address[0]}<br />
               {`${yelpResults.location.city}, ${yelpResults.location.state} ${yelpResults.location.zip_code}`}
             </p>
           </div>

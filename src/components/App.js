@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import Header from "./Header";
-import Home from "./Home";
-import Game from "./games/Game";
-import Route from "./Route";
-import Loading from "./games/Loading";
-import "./App.css";
+import React, {useState} from 'react';
+import Header from './Header';
+import Home from './Home';
+import Game from './Game';
+import Route from './Route';
+import Loading from './Loading';
+import './App.css';
 
 const App = () => {
   // Our data used to send to Yelp Fusion when our Search child
@@ -19,27 +19,25 @@ const App = () => {
     <div>
       <Header />
       <Route path="/">
-        <Home
-          handleFoodSearch={(term) => {
-            setFood(term);
-          }}
-          handleLocationSearch={(term) => {
-            setLocation(term);
-          }}
+        <Home 
+          handleFoodSearch={(term) => {setFood(term)}}
+          handleLocationSearch={(term) => {setLocation(term)}}
         />
       </Route>
       <Route path="/loading">
-        <Loading
-          food={food}
+        <Loading 
+          food={food} 
           location={location}
           setYelpResults={setYelpResults}
         />
       </Route>
       <Route path="/game">
-        <Game yelpResults={yelpResults.businesses} />
+        <Game 
+          yelpResults={yelpResults.businesses}
+        />
       </Route>
     </div>
-  );
-};
+  )
+}
 
 export default App;

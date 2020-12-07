@@ -1,7 +1,6 @@
 @font-face {
   font-family: "Gotham Rounded Medium";
-  src: local("Gotham Rounded Medium"),
-    url("../../assets/fonts/GothamRoundedMedium_21022.ttf");
+  src: local("Gotham Rounded Medium"), url('../assets/fonts/GothamRoundedMedium_21022.ttf')
 }
 
 .rules p {
@@ -14,7 +13,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10px;
 }
 
 .loadingIncomplete p {
@@ -26,7 +24,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 10px;
 }
 
 .loadingFailed {
@@ -46,10 +43,6 @@
 }
 
 @keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
