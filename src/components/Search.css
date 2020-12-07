@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Gotham Rounded Book";
-  src: local("Gotham Rounded Book"), url('../assets/fonts/GothamRoundedBook_21018.ttf')
+  src: local("Gotham Rounded Book"),
+    url("../assets/fonts/GothamRoundedBook_21018.ttf");
 }
 
 .search-container {
@@ -15,20 +16,22 @@ input {
   font-family: "Gotham Rounded Book" !important;
   color: white !important;
   border-radius: 100px !important;
-  background: #F27272 !important;
+  background: #f27272 !important;
   width: 40vh !important;
   text-align: center !important;
-} 
-
-::-webkit-input-placeholder { /* Edge */
-  color:white !important;
 }
 
-:-ms-input-placeholder { /* Internet Explorer */
-  color:white !important;
+::-webkit-input-placeholder {
+  /* Edge */
+  color: white !important;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer */
+  color: white !important;
 }
 
 ::placeholder {
-  color:white !important;
+  color: white !important;
   opacity: 1 !important;
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 // Our Link component that efficiently redirects to another page
 // by preventing a full page reload
@@ -11,11 +11,11 @@ const Link = ({ className, href, style, children }) => {
     event.preventDefault();
 
     // Changes URL without changing content
-    window.history.pushState({}, '', href);
+    window.history.pushState({}, "", href);
 
     // Emit a navigation event to each route to keep track of
     // whether URL is changed or not
-    const navEvent = new PopStateEvent('popstate');
+    const navEvent = new PopStateEvent("popstate");
     window.dispatchEvent(navEvent);
   };
 
