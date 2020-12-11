@@ -49,5 +49,3 @@ Project Link: https://github.com/garzeah/restaurant-tinder
 ## Acknowledgements
 
 * [jtabunan](https://github.com/jtabunan): For helping out with the design of Restaurant Tinder.
-* []()
-* []()
