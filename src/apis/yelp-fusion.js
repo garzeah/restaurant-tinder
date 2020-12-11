@@ -9,6 +9,6 @@ export default axios.create({
   baseURL: `${"https://cors-anywhere.herokuapp.com/"}https://api.yelp.com/v3`,
   headers: {
     Authorization: `Bearer ${KEY}`,
-    "Acess-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Origin": "*",
   },
 });
