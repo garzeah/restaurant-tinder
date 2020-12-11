@@ -1,10 +1,10 @@
 import React from "react";
 import { useMediaQuery } from "react-responsive";
 
-import SearchBar from "./SearchBar";
-import Link from "./router/Link";
-import mobileLogo from "../assets/images/mobileLogo.png";
-import desktopLogo from "../assets/images/desktopLogo.png";
+import SearchBar from "../SearchBar";
+import Link from "../router/Link";
+import mobileLogo from "../../assets/images/mobileLogo.png";
+import desktopLogo from "../../assets/images/desktopLogo.png";
 import "./Home.css";
 
 const Home = ({ handleFoodSearch, handleLocationSearch }) => {

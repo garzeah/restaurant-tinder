@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-import Header from "./Header";
-import Home from "./Home";
-import Game from "./games/Game";
+import Header from "./pages/Header";
+import Home from "./pages/Home";
+import Game from "./pages/Game";
 import Route from "./router/Route";
-import Loading from "./games/Loading";
+import Loading from "./pages/Loading";
 import "./App.css";
 
 const App = () => {

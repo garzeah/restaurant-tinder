@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
-import Card from "./Card.js";
-import GameButton from "./GameButton";
+import Card from "../Card.js";
+import GameButton from "../GameButton";
 import "./Game.css";
 
 const Game = ({ yelpResults }) => {

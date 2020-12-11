@@ -1,8 +1,8 @@
 import React from "react";
 
-import "./Game.css";
-import approveImg from "../../assets/images/approve.png";
-import rejectImg from "../../assets/images/reject.png";
+import "./pages/Game.css";
+import approveImg from "../assets/images/approve.png";
+import rejectImg from "../assets/images/reject.png";
 
 const GameButton = ({ type, handleGameClick }) => {
   const renderGameButton = () => {
