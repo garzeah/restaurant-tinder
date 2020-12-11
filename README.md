@@ -19,23 +19,6 @@ Restaurant Tinder allows users to enter an input and location which will return 
 ### Built With
 
 * React
-* []()
-* []()
-
-
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-To get a local copy up and running follow these simple steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
 
 ### Installation
 
@@ -46,6 +29,10 @@ This is an example of how to list things you need to use the software and how to
 2. Install NPM packages
    ```sh
    npm install
+   ```
+3. Start the server
+   ```sh
+   npm start
    ```
 
 
