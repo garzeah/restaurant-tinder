@@ -1,12 +1,6 @@
-<<<<<<< HEAD:src/components/games/Card.js
 import React from "react";
 
 import "./Card.css";
-=======
-import React from 'react';
-// import Rating from './Ratings';
-import './Card.css';
->>>>>>> parent of e2fd339... Revert "Revert "changed file structure"":src/components/Card.js
 
 const Card = ({ yelpResults }) => {
   const processBadData = (data, type) => {
@@ -44,14 +38,9 @@ const Card = ({ yelpResults }) => {
           </div>
           <div className="address">
             <p>
-<<<<<<< HEAD:src/components/games/Card.js
               {processBadData(yelpResults.location.display_address[0])}
               {/* <br />
               {`${yelpResults.location.city}, ${yelpResults.location.state} ${yelpResults.location.zip_code}`} */}
-=======
-              {yelpResults.location.display_address[0]}<br />
-              {`${yelpResults.location.city}, ${yelpResults.location.state} ${yelpResults.location.zip_code}`}
->>>>>>> parent of e2fd339... Revert "Revert "changed file structure"":src/components/Card.js
             </p>
           </div>
           <div className="number">
