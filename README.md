@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/garzeah/restaurant-tinder">
-    <img src="src/assets/images/desktopLogo.png" alt="Logo" width="80" height="80">
+    <img src="src/assets/images/desktopLogo.png" alt="Logo">
   </a>
 
   <h3 align="center">Restaurant Tinder</h3>
