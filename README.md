@@ -41,7 +41,7 @@ Restaurant Tinder allows users to enter an input and location which will return 
 
 Andy Garcia - acgarzeah@gmail.com
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Project Link: https://github.com/garzeah/restaurant-tinder
 
 
 
