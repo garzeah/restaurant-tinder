@@ -1,10 +1,11 @@
 import React from "react";
 import { useMediaQuery } from "react-responsive";
-import Search from "./Search";
-import Link from "./Link";
-import "./Home.css";
+
+import SearchBar from "./SearchBar";
+import Link from "./router/Link";
 import mobileLogo from "../assets/images/mobileLogo.png";
 import desktopLogo from "../assets/images/desktopLogo.png";
+import "./Home.css";
 
 const Home = ({ handleFoodSearch, handleLocationSearch }) => {
   const isMobile = useMediaQuery({ query: "(max-device-width: 767.98px)" });
@@ -31,8 +32,11 @@ const Home = ({ handleFoodSearch, handleLocationSearch }) => {
   return (
     <div className="home-container">
       {logo}
-      <Search text={"What are you craving?"} onSelectTerm={handleFoodSearch} />
-      <Search
+      <SearchBar
+        text={"What are you craving?"}
+        onSelectTerm={handleFoodSearch}
+      />
+      <SearchBar
         text={"Enter City and State"}
         onSelectTerm={handleLocationSearch}
       />

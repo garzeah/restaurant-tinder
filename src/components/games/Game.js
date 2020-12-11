@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
+
 import Card from "./Card.js";
-import ApproveButton from "./ApproveButton";
-import RejectButton from "./RejectButton";
+import GameButton from "./GameButton";
 import "./Game.css";
 
 const Game = ({ yelpResults }) => {
@@ -59,26 +59,28 @@ const Game = ({ yelpResults }) => {
 
   const isMobile = useMediaQuery({ query: "(max-device-width: 767.98px)" });
   let restaurantCard = null;
+
   // Our JSX that shows our restaurant
   if (isMobile) {
     restaurantCard = (
       <div className="game-mobile">
         <Card yelpResults={yelpResults[currentRestaurant]} />
         <div className="game-buttons-mobile">
-          <RejectButton handleRejectClick={handleRejectClick} />
-          <ApproveButton handleApproveClick={handleApproveClick} />
+          <GameButton type="reject" handleGameClick={handleRejectClick} />
+          <GameButton type="approve" handleGameClick={handleApproveClick} />
         </div>
       </div>
     );
   } else {
     restaurantCard = (
       <div className="game">
-        <RejectButton handleRejectClick={handleRejectClick} />
+        <GameButton type="reject" handleGameClick={handleRejectClick} />
         <Card yelpResults={yelpResults[currentRestaurant]} />
-        <ApproveButton handleApproveClick={handleApproveClick} />
+        <GameButton type="approve" handleGameClick={handleApproveClick} />
       </div>
     );
   }
+
   // Error Handling
   if (Object.keys(yelpResults).length === 0) {
     return (
@@ -86,6 +88,7 @@ const Game = ({ yelpResults }) => {
         Website was refreshed, you have to click "Home" and restart.
       </div>
     );
+
     // Victory Page
   } else if (restaurantList.length === 1) {
     return (
@@ -98,6 +101,7 @@ const Game = ({ yelpResults }) => {
         </div>
       </div>
     );
+
     // Initial render
   } else {
     return restaurantCard;

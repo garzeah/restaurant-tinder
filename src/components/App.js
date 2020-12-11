@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+
 import Header from "./Header";
 import Home from "./Home";
 import Game from "./games/Game";
-import Route from "./Route";
+import Route from "./router/Route";
 import Loading from "./games/Loading";
 import "./App.css";
 

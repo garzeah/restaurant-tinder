@@ -1,8 +1,20 @@
 import React from "react";
-// import Rating from './Ratings';
+
 import "./Card.css";
 
 const Card = ({ yelpResults }) => {
+  const processBadData = (data, type) => {
+    const emptyData = typeof data === "undefined" || data.length === 0;
+
+    if (type === "rating") {
+      if (emptyData) return "No Ratings";
+    } else if (emptyData) {
+      return "N/A";
+    }
+
+    return data;
+  };
+
   return (
     <div className="card-container">
       <h1 className="header">{yelpResults.name}</h1>
@@ -12,24 +24,27 @@ const Card = ({ yelpResults }) => {
         </div>
         <div className="card-content">
           <div className="ratings-and-reviews">
-            <p>{`${yelpResults.rating} Star Rating`}</p>
+            <p>{`${processBadData(
+              yelpResults.rating,
+              "rating"
+            )} Star Rating`}</p>
             <a href={yelpResults.url} target="_blank" rel="noopener noreferrer">
               {`${yelpResults.review_count} reviews`}
             </a>
           </div>
           <div className="price-and-category">
-            <p>{`Price: ${yelpResults.price}`}</p>
-            <p>{`${yelpResults.categories[0].title}`}</p>
+            <p>{`Price: ${processBadData(yelpResults.price)}`}</p>
+            <p>{`${processBadData(yelpResults.categories[0].title)}`}</p>
           </div>
           <div className="address">
             <p>
-              {yelpResults.location.display_address[0]}
-              <br />
-              {`${yelpResults.location.city}, ${yelpResults.location.state} ${yelpResults.location.zip_code}`}
+              {processBadData(yelpResults.location.display_address[0])}
+              {/* <br />
+              {`${yelpResults.location.city}, ${yelpResults.location.state} ${yelpResults.location.zip_code}`} */}
             </p>
           </div>
           <div className="number">
-            <p>Restaurant Number: {yelpResults.display_phone}</p>
+            <p>Phone Number: {processBadData(yelpResults.display_phone)}</p>
           </div>
         </div>
       </div>

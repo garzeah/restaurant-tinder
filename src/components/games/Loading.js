@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import yelp from "../../apis/yelp-fusion";
-import Link from "../Link";
+import Link from "../router/Link";
 import "./Loading.css";
 
 const Loading = ({ food, location, setYelpResults }) => {

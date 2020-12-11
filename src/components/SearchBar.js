@@ -1,9 +1,10 @@
 import React from "react";
-import "./Search.css";
+
+import "./SearchBar.css";
 
 // Our component that displays our search bar
 // onSelectTerm passes data from child to parent
-const Search = ({ text, onSelectTerm }) => {
+const SearchBar = ({ text, onSelectTerm }) => {
   return (
     <div className="ui form">
       <div className="field">
@@ -23,4 +24,4 @@ const Search = ({ text, onSelectTerm }) => {
   );
 };
 
-export default Search;
+export default SearchBar;
