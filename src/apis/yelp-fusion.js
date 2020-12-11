@@ -10,5 +10,6 @@ export default axios.create({
   headers: {
     Authorization: `Bearer ${KEY}`,
     "Access-Control-Allow-Origin": "*",
+    crossorigin: true,
   },
 });
