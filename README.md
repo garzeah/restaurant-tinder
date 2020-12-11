@@ -14,11 +14,11 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-A Tinder-esque web application that helps users decide which restaurant to dine at. This was made with the intention to practice React.
+Restaurant Tinder allows users to enter an input and location which will return a list of restaurants. The user then has to continually approve/reject restaurants until there is only 1 standing.
 
 ### Built With
 
-* [React]()
+* React
 * []()
 * []()
 
