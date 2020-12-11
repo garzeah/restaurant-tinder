@@ -1,19 +1,16 @@
 @font-face {
   font-family: "Gotham Rounded Bold";
-  src: local("Gotham Rounded Bold"),
-    url("../../assets/fonts/GothamRoundedBold_21016.ttf");
+  src: local("Gotham Rounded Bold"), url('../assets/fonts/GothamRoundedBold_21016.ttf')
 }
 
 @font-face {
   font-family: "Gotham Rounded Book";
-  src: local("Gotham Rounded Book"),
-    url("../../assets/fonts/GothamRoundedBook_21018.ttf");
+  src: local("Gotham Rounded Book"), url('../assets/fonts/GothamRoundedBook_21018.ttf')
 }
 
 @font-face {
   font-family: "Gotham Rounded Medium";
-  src: local("Gotham Rounded Medium"),
-    url("../../assets/fonts/GothamRoundedMedium_21022.ttf");
+  src: local("Gotham Rounded Medium"), url('../assets/fonts/GothamRoundedMedium_21022.ttf')
 }
 
 .card-container {
@@ -22,13 +19,13 @@
 
 .header {
   text-align: center;
-  font-family: "Gotham Rounded Bold";
+  font-family: 'Gotham Rounded Bold';
   font-size: 40px;
   margin-bottom: 10px;
 }
 
 .card-container-no-header {
-  background: #f27272;
+  background: #F27272;
   margin: 0 100px;
   padding: 10px 0;
   border-radius: 25px;
@@ -53,7 +50,7 @@
 .ratings-and-reviews {
   display: flex;
   justify-content: space-between;
-  font-family: "Gotham Rounded Book";
+  font-family: 'Gotham Rounded Book';
   font-size: 13px;
   color: #e6e6e6;
   margin-bottom: 5px;
@@ -62,21 +59,21 @@
 .price-and-category {
   display: flex;
   justify-content: space-between;
-  font-family: "Gotham Rounded Book";
+  font-family: 'Gotham Rounded Book';
   font-size: 13px;
   color: #e6e6e6;
   margin-bottom: 5px;
 }
 
 .address {
-  font-family: "Gotham Rounded Medium";
+  font-family: 'Gotham Rounded Medium';
   font-size: 13px;
   color: #e6e6e6;
   margin-bottom: 5px;
 }
 
 .number {
-  font-family: "Gotham Rounded Book";
+  font-family: 'Gotham Rounded Book';
   font-size: 13px;
   color: #e6e6e6;
   margin-bottom: 5px;
@@ -91,15 +88,15 @@
   }
 
   .card-container-no-header {
-    background: #f27272;
+    background: #F27272;
     margin: 0 10px;
     padding: 10px 0;
-    border-radius: 25px;
+    border-radius: 25px;    
   }
 
   .header {
     text-align: center;
-    font-family: "Gotham Rounded Bold";
+    font-family: 'Gotham Rounded Bold';
     font-size: 20px;
   }
 }

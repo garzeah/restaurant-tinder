@@ -1,7 +1,6 @@
 @font-face {
   font-family: "Gotham Rounded Medium";
-  src: local("Gotham Rounded Medium"),
-    url("../../assets/fonts/GothamRoundedMedium_21022.ttf");
+  src: local("Gotham Rounded Medium"), url('../assets/fonts/GothamRoundedMedium_21022.ttf')
 }
 
 .game {
@@ -17,7 +16,7 @@
 }
 
 .victoryText {
-  color: #fda84e;
+  color: #FDA84E;
   font-size: 60px;
   text-align: center;
   display: flex;
@@ -27,22 +26,19 @@
 }
 
 /* Reject and Approve Button Styling */
-.reject:hover,
-.approve:hover {
+.reject:hover, .approve:hover {
   cursor: pointer;
   transform: scale(1.1);
-  transition-duration: 0.1s;
+  transition-duration: .1s; 
 }
 
-.reject,
-.approve {
+.reject, .approve {
   font-size: 100px;
   display: flex;
   align-items: center;
 }
 
-.reject img,
-.approve img {
+.reject img, .approve img {
   max-width: 100px;
 }
 
