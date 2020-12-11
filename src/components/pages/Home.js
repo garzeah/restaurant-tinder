@@ -13,9 +13,9 @@ const Home = ({ handleFoodSearch, handleLocationSearch }) => {
 
   if (isMobile) {
     logo = (
-      <div className="logo-container">
+      <div className="ui image">
         <img
-          style={{ maxWidth: "90%" }}
+          style={{ margin: "20px auto" }}
           src={mobileLogo}
           alt="Restaurant Tinder Icon"
         />
@@ -23,7 +23,7 @@ const Home = ({ handleFoodSearch, handleLocationSearch }) => {
     );
   } else {
     logo = (
-      <div className="logo-container">
+      <div className="ui image">
         <img src={desktopLogo} alt="Restaurant Tinder Icon" />
       </div>
     );

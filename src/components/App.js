@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import Game from "./pages/Game";
 import Route from "./router/Route";
 import Loading from "./pages/Loading";
-import "./App.css";
+// import "./App.css";
 
 const App = () => {
   // Our data used to send to Yelp Fusion when our Search child
