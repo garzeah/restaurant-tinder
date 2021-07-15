@@ -5,7 +5,7 @@
     <img src="src/assets/images/desktopLogo.png" alt="Logo">
   </a>
 
-  <h3 align="center">Restaurant Tinder</h3>
+  <h3 align="center">Restaurant Tinder (DEPRECATED)</h3>
 
   <p align="center">
      Helps users decide which restaurant to eat it.
